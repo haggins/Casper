@@ -297,7 +297,7 @@ body {
 
 ::selection {
     text-shadow: none;
-    background: color(var(--blue) lightness(+30%));
+    background: color(var(--pink) lightness(+30%));
 }
 
 hr {
@@ -415,7 +415,7 @@ blockquote cite a {
 }
 
 a {
-    color: color(var(--blue) l(-5%));
+    color: color(var(--pink) l(-5%));
     text-decoration: none;
 }
 
@@ -483,4 +483,9 @@ h6 {
     margin: 1.5em 0 0.5em 0;
     font-size: 1.4rem;
     font-weight: 500;
+}
+
+.content-flex {
+    display: flex;
+    display: -webkit-flex;
 }

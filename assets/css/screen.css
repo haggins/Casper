@@ -175,7 +175,7 @@ body {
     margin: 0;
     padding: 5px 0;
     font-size: 2.2rem;
-    font-weight: 300;
+    font-weight: 500;
     letter-spacing: 0.5px;
     opacity: 0.8;
 }
@@ -218,6 +218,12 @@ body {
     -ms-overflow-scrolling: touch;
 }
 
+.home-template .site-nav-left,
+.home-template .site-nav-right {
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+}
+
 /* Site Nav Hack Explanation (above):
 
 What's happening above it .site-nav-left is set to overflow-x and allow sideways scrolling, so that when there isn't enough space for all nav items (either due to lots of nav items, or a small viewport), you can still scroll side-to-side to reach them.
@@ -255,11 +261,19 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     list-style: none;
 }
 
+.home-template .nav {
+    margin-left: 0;
+}
+
 .nav li {
     display: block;
     margin: 0;
     padding: 0;
     text-transform: uppercase;
+}
+
+.home-template .nav li {
+    font-weight: 700;
 }
 
 .nav li a {
@@ -286,6 +300,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     flex-shrink: 0;
     display: flex;
     align-items: center;
+    font-size: 1.8rem;
 }
 
 .social-links a:last-of-type {
@@ -297,6 +312,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     justify-content: center;
     align-items: center;
     margin: 0;
+    margin-bottom: -3px;
     padding: 10px;
     color: #fff;
     opacity: 0.8;
@@ -304,6 +320,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 
 .social-link:hover {
     opacity: 1;
+    text-decoration: none;
 }
 
 .social-link svg {
@@ -345,6 +362,10 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 
 .rss-button {
     opacity: 0.8;
+}
+
+.home-template .rss-button {
+    padding-right: 10px;
 }
 
 .rss-button:hover {
@@ -696,7 +717,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 }
 
 .post-full-meta-date {
-    color: var(--blue);
+    color: var(--pink);
 }
 
 .post-full-title {
@@ -825,11 +846,11 @@ make sure this only happens on large viewports / desktop-ish devices.
 .post-full-content a {
     color: #000;
     word-break: break-word;
-    box-shadow: var(--blue) 0 -1px 0 inset;
+    box-shadow: var(--pink) 0 -1px 0 inset;
 }
 
 .post-full-content a:hover {
-    color: var(--blue);
+    color: var(--pink);
     text-decoration: none;
 }
 
@@ -900,7 +921,7 @@ Usage (In Ghost editor):
 .post-full-content blockquote {
     margin: 0 0 1.5em;
     padding: 0 1.5em;
-    border-left: #3eb0ef 3px solid;
+    border-left: var(--pink) 3px solid;
 }
 
 .post-full-content blockquote p {
@@ -1033,7 +1054,7 @@ Usage (In Ghost editor):
     margin: 0.5em 0;
     padding: 1em 0 1.5em;
     border: 0;
-    color: var(--blue);
+    color: var(--pink);
     font-family: Georgia,serif;
     font-size: 3.2rem;
     line-height: 1.35em;
@@ -1076,7 +1097,7 @@ Usage (In Ghost editor):
 }
 
 .footnote-backref {
-    color: var(--blue) !important;
+    color: var(--pink) !important;
     font-size: 1.2rem;
     font-weight: bold;
     text-decoration: none !important;
@@ -1233,10 +1254,10 @@ Usage (In Ghost editor):
     text-align: center;
     text-shadow: 0 -1px 0 rgba(0,0,0,0.1);
     background: linear-gradient(
-    color(var(--blue) whiteness(+7%)),
-    color(var(--blue) lightness(-7%) saturation(-10%)) 60%,
-    color(var(--blue) lightness(-7%) saturation(-10%)) 90%,
-    color(var(--blue) lightness(-4%) saturation(-10%))
+    color(var(--pink) whiteness(+7%)),
+    color(var(--pink) lightness(-7%) saturation(-10%)) 60%,
+    color(var(--pink) lightness(-7%) saturation(-10%)) 90%,
+    color(var(--pink) lightness(-4%) saturation(-10%))
     );
     border-radius: 5px;
     box-shadow: 0 0 0 1px inset rgba(0,0,0,0.14);
@@ -1246,7 +1267,7 @@ Usage (In Ghost editor):
 
 .subscribe-form button:active,
 .subscribe-form button:focus {
-    background: color(var(--blue) lightness(-9%) saturation(-10%));
+    background: color(var(--pink) lightness(-9%) saturation(-10%));
 }
 
 @media (max-width: 650px) {
@@ -1337,8 +1358,8 @@ Usage (In Ghost editor):
 }
 
 .author-card-button:hover {
-    border-color: var(--blue);
-    color: var(--blue);
+    border-color: var(--pink);
+    color: var(--pink);
     text-decoration: none;
 }
 
@@ -1640,7 +1661,7 @@ Usage (In Ghost editor):
     align-items: center;
     height: 60px;
     border-bottom: rgba(0,0,0,0.06) 1px solid;
-    background: rgba(255,255,255,0.95);
+    background: rgba(0,0,0,0.8);
     transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
     transform: translate3d(0, -120%, 0);
 }
@@ -1664,7 +1685,7 @@ Usage (In Ghost editor):
 .floating-header-logo a {
     display: flex;
     align-items: center;
-    color: var(--darkgrey);
+    color: var(--lightgrey);
     line-height: 1.1em;
     font-weight: 700;
 }
@@ -1681,13 +1702,14 @@ Usage (In Ghost editor):
 .floating-header-divider {
     margin: 0 5px;
     line-height: 1em;
+    color: var(--lightgrey);
 }
 
 .floating-header-title {
     flex: 1;
     overflow: hidden;
     margin: 0;
-    color: #2e2e2e;
+    color: var(--lightgrey);
     font-size: 1.6rem;
     line-height: 1.3em;
     font-weight: bold;
@@ -1721,7 +1743,7 @@ Usage (In Ghost editor):
     display: flex;
     align-items: center;
     margin-right: 10px;
-    color: rgba(0,0,0,0.7);
+    color: var(--lightgrey);
     font-weight: 500;
 }
 
@@ -1761,7 +1783,7 @@ Usage (In Ghost editor):
     width: 100%;
     height: 2px;
     border: none;
-    color: var(--blue);
+    color: var(--pink);
     background: transparent;
 
     appearance: none;
@@ -1772,11 +1794,11 @@ Usage (In Ghost editor):
 }
 
 .progress::-webkit-progress-value {
-    background-color: var(--blue);
+    background-color: var(--pink);
 }
 
 .progress::-moz-progress-bar {
-    background-color: var(--blue);
+    background-color: var(--pink);
 }
 
 .progress-container {
@@ -1793,7 +1815,8 @@ Usage (In Ghost editor):
     display: block;
     width: 50%;
     height: inherit;
-    background-color: var(--blue);
+    color: var(--pink);
+    background-color: var(--pink);
 }
 
 @media (max-width: 900px) {
@@ -2160,10 +2183,10 @@ Usage (In Ghost editor):
     text-align: center;
     text-shadow: 0 -1px 0 rgba(0,0,0,0.1);
     background: linear-gradient(
-    color(var(--blue) whiteness(+7%)),
-    color(var(--blue) lightness(-7%) saturation(-10%)) 60%,
-    color(var(--blue) lightness(-7%) saturation(-10%)) 90%,
-    color(var(--blue) lightness(-4%) saturation(-10%))
+    color(var(--pink) whiteness(+7%)),
+    color(var(--pink) lightness(-7%) saturation(-10%)) 60%,
+    color(var(--pink) lightness(-7%) saturation(-10%)) 90%,
+    color(var(--pink) lightness(-4%) saturation(-10%))
     );
     border-radius: 8px;
     box-shadow: 0 0 0 1px inset rgba(0,0,0,0.14);
@@ -2173,7 +2196,7 @@ Usage (In Ghost editor):
 
 .subscribe-overlay button:active,
 .subscribe-overlay button:focus {
-    background: color(var(--blue) lightness(-9%) saturation(-10%));
+    background: color(var(--pink) lightness(-9%) saturation(-10%));
 }
 
 .subscribe-overlay-close {
@@ -2247,6 +2270,7 @@ Usage (In Ghost editor):
 
 .site-footer-nav {
     display: flex;
+    font-size: 2.5rem;
 }
 
 .site-footer-nav a {
@@ -2254,17 +2278,17 @@ Usage (In Ghost editor):
     margin-left: 20px;
 }
 
-.site-footer-nav a:before {
-    content: "";
-    position: absolute;
-    top: 11px;
-    left: -11px;
-    display: block;
-    width: 2px;
-    height: 2px;
-    background: #fff;
-    border-radius: 100%;
-}
+/*.site-footer-nav a:before {*/
+    /*content: "";*/
+    /*position: absolute;*/
+    /*top: 11px;*/
+    /*left: -11px;*/
+    /*display: block;*/
+    /*width: 2px;*/
+    /*height: 2px;*/
+    /*background: #fff;*/
+    /*border-radius: 100%;*/
+/*}*/
 
 .site-footer-nav a:first-of-type:before {
     display: none;
@@ -2277,4 +2301,25 @@ Usage (In Ghost editor):
     .site-footer-nav a:first-child {
         margin-left: 0;
     }
+}
+
+/* 12. Sidebar
+/* ---------------------------------------------------------- */
+
+.sidebar {
+    width: 250px;
+}
+
+.sidebar .inner {
+    text-align: center;
+    padding-top: 75px;
+    width: 250px;
+    height: 100vh; /* full height of the window */
+    position: fixed;
+}
+
+.sidebar img {
+    border-radius: 100%;
+    width: 100%;
+    object-fit: cover;
 }
