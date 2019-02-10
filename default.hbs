@@ -30,7 +30,13 @@
         {{!-- The footer at the very bottom of the screen --}}
         <footer class="site-footer outer">
             <div class="site-footer-content inner">
-                <section class="copyright"><a href="{{@site.url}}">Patrick Stürmlinger</a> &copy; {{date format="YYYY"}}</section>
+                <section class="copyright">
+                    <a href="{{@site.url}}">Patrick Stürmlinger</a> &copy; {{date format="YYYY"}}
+                    <div class="legal">
+                        <a href="{{@site.url}}/imprint">Imprint</a>
+                        <a href="{{@site.url}}/privacy">Privacy Policy</a>
+                    </div>
+                </section>
                 <nav class="site-footer-nav">
                     <a href="https://github.com/haggins" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
                     <a href="https://www.linkedin.com/in/patrick-st%C3%BCrmlinger-072328104/" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a>

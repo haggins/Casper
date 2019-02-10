@@ -83,6 +83,28 @@ into the {body} of the default.hbs template --}}
 
                 </article>
 
+                {{!-- Disqus --}}
+                <a id="show-comments">
+                    Show comments (Disqus)
+                </a>
+                <div id="disqus_thread"></div>
+                <script>
+                    document.querySelector('#show-comments').addEventListener('click', function () {
+                        this.classList.add('hidden');
+                        var disqus_config = function () {
+                            this.page.url = 'https://mindf.org';  // Replace PAGE_URL with your page's canonical URL variable
+                            this.page.identifier = "ghost-{{comment_id}}";
+                        };
+
+                        (function() { // DON'T EDIT BELOW THIS LINE
+                            var d = document, s = d.createElement('script');
+                            s.src = 'https://mindforg.disqus.com/embed.js';
+                            s.setAttribute('data-timestamp', +new Date());
+                            (d.head || d.body).appendChild(s);
+                        })();
+                    });
+                </script>
+                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
             </div>
         </main>
 
@@ -146,7 +168,40 @@ into the {body} of the default.hbs template --}}
 
     {{!-- Floating header which appears on-scroll, included from includes/floating-header.hbs --}}
     {{> floating-header}}
+
 {{/post}}
+
+{{!-- Prism --}}
+<script>
+    // Detect if we have code tags on the page.
+    var codeElements =  document.querySelectorAll("pre > code");
+    if (codeElements && codeElements.length) {
+        // Add class 'line-numbers' to all <pre>'s
+        codeElements.forEach(codeElement => {
+           codeElement.parentElement.classList.add('line-numbers');
+        });
+
+        // Create CSS Element
+        var prismCSS = document.createElement('link');
+        prismCSS.rel = "stylesheet";
+        prismCSS.type = "text/css";
+        prismCSS.href = "/assets/prism/prism.css?v=2"
+
+        // Create PrismJS Element
+        var prismScript = document.createElement('script');
+        prismScript.type='text/javascript';
+        prismScript.src="/assets/prism/prism.js?v=2";
+
+        // Set Components Folder because of asynch script loading
+        prismScript.onload = function() {
+            Prism.plugins.autoloader.languages_path = '/assets/prism/components/';
+        };
+
+        // Load script and css in the DOM
+        document.head.appendChild(prismCSS);
+        document.head.appendChild(prismScript);
+    }
+</script>
 
 {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
 {{#contentFor "scripts"}}

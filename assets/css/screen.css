@@ -978,7 +978,7 @@ Usage (In Ghost editor):
 }
 
 .post-full-content hr {
-    margin: 4vw 0;
+    margin: 2vw 0;
 }
 
 .post-full-content hr:after {
@@ -1301,7 +1301,7 @@ Usage (In Ghost editor):
     justify-content: space-between;
     align-items: center;
     margin: 0 auto;
-    padding: 3vw 0 6vw 0;
+    padding: 3vw 0 4vw 0;
     max-width: 840px;
 }
 
@@ -2268,6 +2268,35 @@ Usage (In Ghost editor):
     text-decoration: none;
 }
 
+.site-footer-content .copyright .legal {
+    display: flex;
+}
+
+.site-footer-content .copyright .legal a {
+    position: relative;
+    margin-left: 20px;
+}
+
+.site-footer-content .copyright .legal a:first-child {
+    margin-left: 0;
+}
+
+.site-footer-content .copyright .legal a:before {
+    content: "";
+    position: absolute;
+    top: 11px;
+    left: -11px;
+    display: block;
+    width: 2px;
+    height: 2px;
+    background: #fff;
+    border-radius: 100%;
+}
+
+.site-footer-content .copyright .legal a:first-of-type:before {
+    display: none;
+}
+
 .site-footer-nav {
     display: flex;
     font-size: 2.5rem;
@@ -2278,21 +2307,6 @@ Usage (In Ghost editor):
     margin-left: 20px;
 }
 
-/*.site-footer-nav a:before {*/
-    /*content: "";*/
-    /*position: absolute;*/
-    /*top: 11px;*/
-    /*left: -11px;*/
-    /*display: block;*/
-    /*width: 2px;*/
-    /*height: 2px;*/
-    /*background: #fff;*/
-    /*border-radius: 100%;*/
-/*}*/
-
-.site-footer-nav a:first-of-type:before {
-    display: none;
-}
 
 @media (max-width: 650px) {
     .site-footer-content {
@@ -2322,4 +2336,32 @@ Usage (In Ghost editor):
     border-radius: 100%;
     width: 100%;
     object-fit: cover;
+}
+
+/* 13. Disqus
+/* ---------------------------------------------------------- */
+#disqus_thread {
+    padding: 0 4vw;
+    max-width: 1040px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+#show-comments {
+    padding: 0 4vw;
+    max-width: 1040px;
+    width: 100%;
+    padding: 20px 0;
+    border: 1px solid var(--pink);
+    margin: 0 auto;
+    display: inline-block;
+    text-align: center;
+    transition: all 500ms;
+}
+#show-comments:hover {
+    cursor: pointer;
+}
+
+#show-comments.hidden {
+    display: none;
 }
